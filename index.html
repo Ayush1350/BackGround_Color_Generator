@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Generator</title>
+    <style>
+
+        * {
+            color: aliceblue;
+        }
+
+body {
+    background-color: #222831;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+div {
+    background-color: #393E46;
+    height: 100px; /* Increased height to accommodate label and button */
+    width: 350px;
+    display: flex;
+    flex-direction: column; /* Set to column to stack items vertically */
+    align-items: center; /* Center items horizontally within the div */
+    padding: 20px; /* Added padding for spacing */
+}
+
+button {
+    margin-top: 2rem; /* Adjusted margin for spacing between label and button */
+    color: black;
+}
+
+label {
+    margin-top: 1rem;
+}
+
+</style>
+</head>
+<body>
+    <div id="div1">
+        Your Background Color Is :<label id="lbl1"></label>
+        <button onclick="randomColor()">Change Colour</button>
+    </div>
+</body>
+
+<script>
+
+    function randomColor() {
+        var latters = '0123456789ABCDEF';
+        let color = '#';
+
+        for(let i = 0; i < 6; i++) {
+            color += latters[Math.floor(Math.random() * 16)];
+        }
+        document.getElementById("lbl1").innerHTML = color;
+        document.body.style.backgroundColor = color;
+    }
+
+    
+
+</script>
+</html>
